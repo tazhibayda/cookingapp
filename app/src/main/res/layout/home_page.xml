@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F3F1"
+    tools:context=".HomePageActivity">
+
+
+
+    <TextView
+        android:id="@+id/textViewHome"
+        android:layout_width="280dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/work_sans"
+        android:text="Cooksy"
+        android:textColor="#1C0F13"
+        android:textFontWeight="600"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <SearchView
+        android:id="@+id/searchViewHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textViewHome"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="243dp"
+        android:layout_height="334dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/textViewHome"
+        app:layout_constraintTop_toBottomOf="@id/textViewHome"
+        android:layout_marginTop="64dp"
+        app:cardCornerRadius="20dp"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cardMainText"
+                android:layout_width="193dp"
+                android:layout_height="76dp"
+                android:fontFamily="@font/work_sans"
+                android:text="Recipe\nof the day"
+                android:textColor="#1C0F13"
+                android:textFontWeight="600"
+                android:textSize="32sp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
+               />
+
+            <TextView
+                android:id="@+id/cardSubText"
+                android:layout_width="193dp"
+                android:layout_height="22dp"
+                android:fontFamily="@font/work_sans"
+                android:text="Roasted Pumpkin Soup"
+                android:textFontWeight="500"
+                android:textSize="16sp"
+                android:layout_marginStart="25dp"
+                android:textColor="#1C0F13"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/clock"
+                    android:drawablePadding="6dp"
+                    android:text="50 min"
+                    android:textColor="@color/material_dynamic_neutral60"
+                    android:layout_marginStart="20dp"
+                    android:padding="8dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/dishes"
+                    android:text="4 ppl"
+                    android:drawablePadding="6dp"
+                    android:padding="8dp"
+                    android:textColor="@color/material_dynamic_neutral60" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="193dp"
+                android:layout_height="121dp"
+                android:layout_marginStart="25dp"
+                android:src="@drawable/image" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/textReneView"
+        android:layout_width="325dp"
+        android:layout_height="76dp"
+        android:text="René Redzepi\nrecommends you"
+        app:layout_constraintTop_toBottomOf="@id/card"
+        app:layout_constraintStart_toStartOf="@id/textViewHome"
+        android:layout_marginTop="95dp"
+        android:textColor="#1C0F13"
+        android:textSize="32sp"
+        android:textFontWeight="600"
+        android:fontFamily="@font/work_sans"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

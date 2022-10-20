@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F3F1"
+    android:padding="25dp"
     tools:context=".MainActivity">
 
 
@@ -25,25 +27,27 @@
         android:id="@+id/firstImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
         android:src="@drawable/first"
-        app:layout_constraintStart_toStartOf="@id/textCooksyView"
         app:layout_constraintEnd_toEndOf="@id/textCooksyView"
-        app:layout_constraintTop_toBottomOf="@id/textCooksyView"
-        android:layout_marginTop="120dp"/>
+        app:layout_constraintStart_toStartOf="@id/textCooksyView"
+        app:layout_constraintTop_toBottomOf="@id/textCooksyView" />
+
     <TextView
         android:id="@+id/textRecipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="All the recipes on your fingertips"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstImageView"
         android:layout_marginTop="52dp"
         android:fontFamily="@font/work_sans"
-        android:textSize="30sp"
+        android:text="All the recipes \n on your fingertips"
         android:textAlignment="center"
         android:textColor="#1C0F13"
-        android:textFontWeight="600"/>
+        android:textFontWeight="600"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstImageView" />
 
     <TextView
         android:id="@+id/subTextRecipes"
@@ -51,26 +55,29 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12sp"
         android:text="Cooking on Thermomix   made easy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textRecipes"
         android:textFontWeight="400"
         android:textSize="17sp"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textRecipes" />
 
     <Button
         android:layout_width="330dp"
         android:layout_height="51dp"
         android:layout_marginTop="120sp"
+        android:layout_marginBottom="45dp"
         android:backgroundTint="#1C0F13"
         android:fontFamily="@font/work_sans"
         android:text="Let's start"
+        android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/subTextRecipes"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="45dp"
-        android:textAlignment="center"/>
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subTextRecipes"
+        app:layout_constraintVertical_bias="0.494" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
