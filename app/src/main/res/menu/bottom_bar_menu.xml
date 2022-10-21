@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/item1"
+        android:id="@+id/inspirations"
         android:enabled="true"
-        android:icon="@drawable/clock"
-        android:title="asd"/>
+        android:icon="@drawable/bottombar_inspriations"
+        android:title="@string/inspriations"/>
     <item
-        android:id="@+id/item2"
+        android:id="@+id/myrecipes"
         android:enabled="true"
-        android:icon="@drawable/clock"
-        android:title="asd"/>
+        android:icon="@drawable/bottombar_myrecipes"
+        android:title="@string/myrecipes"/>
+    <item
+        android:id="@+id/cooknow"
+        android:enabled="true"
+        android:icon="@drawable/bottombar_cooknow"
+        android:title="@string/cooknow"/>
+    <item
+        android:id="@+id/settings"
+        android:enabled="true"
+        android:icon="@drawable/bottombar_settings"
+        android:title="@string/settings"/>
 </menu>

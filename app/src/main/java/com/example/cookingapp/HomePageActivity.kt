@@ -26,11 +26,19 @@ class HomePageActivity : AppCompatActivity() {
         }
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when(item.itemId) {
-                R.id.item1 -> {
+                R.id.inspirations -> {
                     // Respond to navigation item 1 click
                     true
                 }
-                R.id.item2 -> {
+                R.id.myrecipes -> {
+                    // Respond to navigation item 2 click
+                    true
+                }
+                R.id.cooknow -> {
+                    // Respond to navigation item 1 click
+                    true
+                }
+                R.id.settings -> {
                     // Respond to navigation item 2 click
                     true
                 }

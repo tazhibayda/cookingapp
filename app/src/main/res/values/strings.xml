@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Cooking app</string>
+    <string name="inspriations">Inspriations</string>
+    <string name="myrecipes">My recipes</string>
+    <string name="cooknow">Cook now!</string>
+    <string name="settings">Settings</string>
 </resources>

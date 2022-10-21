@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F3F1"
-    android:padding="20dp"
     tools:context=".HomePageActivity">
 
     <ScrollView
@@ -22,6 +21,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="80dp"
             android:orientation="vertical"
             android:padding="25dp">
 
@@ -297,6 +297,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Browse more recipes"
+                android:layout_marginBottom="44dp"
                 android:textAllCaps="false"
                 android:textColor="#1C0F13"
                 app:cornerRadius="7dp"
@@ -315,6 +316,7 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
+        android:layout_margin="20dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
