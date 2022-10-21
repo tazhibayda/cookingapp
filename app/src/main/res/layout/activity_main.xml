@@ -61,7 +61,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textRecipes" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:layout_width="330dp"
         android:layout_height="51dp"
         android:layout_marginTop="120sp"
@@ -76,7 +76,8 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/subTextRecipes"
-        app:layout_constraintVertical_bias="0.494" />
+        android:textAllCaps="false"
+        app:cornerRadius="8dp"/>
 
 
 
