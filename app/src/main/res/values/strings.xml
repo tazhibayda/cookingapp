@@ -4,4 +4,6 @@
     <string name="myrecipes">My recipes</string>
     <string name="cooknow">Cook now!</string>
     <string name="settings">Settings</string>
+    <string name="my_recipes">My recipes</string>
+    <string name="textview">TextView</string>
 </resources>
