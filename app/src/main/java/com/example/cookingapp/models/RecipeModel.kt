@@ -1,10 +1,12 @@
-package com.example.cookingapp
+package com.example.cookingapp.models
 
-class ReciepModel(
+class RecipeModel(
     private var name:String,
     private var text:String,
     private var time: Int,
-    private var ppl: Int) {
+    private var ppl: Int,
+    private var image: Int
+    ) {
 
     fun getName():String{
         return name
@@ -35,6 +37,14 @@ class ReciepModel(
 
     fun setPpl(ppl: Int){
        this.ppl = ppl
+    }
+
+    fun getImage():Int{
+       return image
+    }
+
+    fun setImage(image: Int){
+       this.image = image
     }
 
 }
