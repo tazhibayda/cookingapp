@@ -22,11 +22,11 @@ class RecipeAdapter(private val context: Context, courseModelArrayList: ArrayLis
     override fun onBindViewHolder(holder: RecipeAdapter.Viewholder, position: Int) {
         // to set data to textview and imageview of each card layout
         val model: RecipeModel = courseModelArrayList[position]
-        holder.recipe_name.setText(model.getName())
-        holder.recipe_time.setText("" + model.getTime())
-        holder.recipe_ppl.setText("" + model.getPpl())
-        holder.recipe_text.setText("" + model.getText())
-        holder.recipe_image.setImageResource(model.getImage())
+        holder.recipe_name.text = model.name
+        holder.recipe_time.text = model.time.toString() + " min"
+        holder.recipe_ppl.text = model.ppl.toString()+" ppl"
+        holder.recipe_text.text = model.text
+        holder.recipe_image.setImageResource(model.image)
     }
 
     override fun getItemCount(): Int {

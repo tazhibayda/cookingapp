@@ -303,10 +303,7 @@
                 app:cornerRadius="7dp"
                 app:strokeColor="@color/black" />
 
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottom_navigatin_view"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
+
 
 
         </LinearLayout>
@@ -315,6 +312,7 @@
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigatin_view"
         android:layout_width="match_parent"
         android:layout_margin="20dp"
         android:layout_height="wrap_content"
