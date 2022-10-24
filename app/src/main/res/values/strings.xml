@@ -6,4 +6,11 @@
     <string name="settings">Settings</string>
     <string name="my_recipes">My recipes</string>
     <string name="textview">TextView</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cooksy">Cooksy</string>
+    <string name="roasted_pumpkin_soup">Roasted Pumpkin Soup</string>
+    <string name="_50_min">50 min</string>
+    <string name="ren_redzepi_nrecommends_you">René Redzepi\nrecommends you</string>
+    <string name="vegan_thai_curry_soup">Vegan Thai Curry Soup</string>
 </resources>
