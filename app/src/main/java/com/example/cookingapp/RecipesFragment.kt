@@ -6,20 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.cookingapp.adapters.RecipeAdapter
+import com.example.cookingapp.databinding.HomePageBinding
 import com.example.cookingapp.models.RecipeModel
 
 
 class RecipesFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private lateinit var homePagebinding: HomePageBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,15 +42,26 @@ class RecipesFragment : Fragment() {
         recieps.adapter = recipeAdapter
 
 
+        homePagebinding = HomePageBinding.inflate(layoutInflater)
+        homePagebinding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.inspirations -> {
+                    findNavController().navigate(R.id.action_recipesFragment_to_inspirationFragment)
+                    true
+                }
+                R.id.cooknow -> {
+                    true
+                }
+                R.id.settings -> {
+                    true
+                }
+                else -> false
+            }
+        }
+
         return view
     }
 
-    companion object {
 
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RecipesFragment().apply {
 
-            }
-    }
 }

@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.replace
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -21,7 +23,7 @@ class HomePageActivity : AppCompatActivity() {
     private lateinit var homePagebinding: HomePageBinding
     private lateinit var activitymainbinding: ActivityMainBinding
     private lateinit var myRecipesBinding: MyRecipesBinding
-
+    private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
@@ -38,7 +40,8 @@ class HomePageActivity : AppCompatActivity() {
 
         bottomBarNavigation()
 
-
+//        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+//        val navController = navHostFragment.navController
 
 
 
