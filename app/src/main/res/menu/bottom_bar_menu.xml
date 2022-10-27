@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/inspirations"
+        android:id="@+id/inspirationFragment"
         android:enabled="true"
         android:icon="@drawable/bottombar_inspriations"
         android:title="@string/inspriations"/>
     <item
-        android:id="@+id/myrecipes"
+        android:id="@+id/recipesFragment"
         android:enabled="true"
         android:icon="@drawable/bottombar_myrecipes"
         android:title="@string/myrecipes"/>
