@@ -61,24 +61,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textRecipes" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/start"
-        android:layout_width="330dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="120sp"
-        android:layout_marginBottom="45dp"
-        android:backgroundTint="#1C0F13"
-        android:fontFamily="@font/work_sans"
-        android:text="Let's start"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        app:cornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/subTextRecipes" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
