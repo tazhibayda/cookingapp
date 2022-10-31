@@ -13,4 +13,9 @@
     <string name="_50_min">50 min</string>
     <string name="ren_redzepi_nrecommends_you">René Redzepi\nrecommends you</string>
     <string name="vegan_thai_curry_soup">Vegan Thai Curry Soup</string>
+    <string name="todo">TODO</string>
+    <string name="recipes_nof_the_day">Recipes\nof the day</string>
+    <string name="ren_redzepi_n_recommends_you">René Redzepi \nrecommends you</string>
+    <string name="sub_text_recommend">Spice lovers will slurp up this soup in seconds.Featuring chili powder, smoked paprika, and cayenne pepper, every bowl brings the heat.</string>
+    <string name="browse_more_recieps">Browse more recieps</string>
 </resources>
