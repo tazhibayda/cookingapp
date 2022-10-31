@@ -21,11 +21,11 @@ class InspirationFragment : Fragment() {
         val recipesDay : RecyclerView = myview.findViewById(R.id.RecipesDayRv)
 
         val recipesDayList :ArrayList<InspirationsModel> = ArrayList()
-        recipesDayList.add(InspirationsModel("Recipes \n of the day", "Roasted Pumpkin Soup",
+        recipesDayList.add(InspirationsModel("Recipes \nof the day", "Roasted Pumpkin Soup",
             50, 4, R.drawable.day_image))
-        recipesDayList.add(InspirationsModel("Cook \n like pro","Veggie breakfast",
+        recipesDayList.add(InspirationsModel("Cook \nlike pro","Veggie breakfast",
             5,1,R.drawable.day2_image))
-        recipesDayList.add(InspirationsModel("Check \n new updates", "Cheese’n’Meat",
+        recipesDayList.add(InspirationsModel("Check \nnew updates", "Cheese’n’Meat",
             3,2,R.drawable.day3_image))
 
 /*

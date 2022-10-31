@@ -21,5 +21,14 @@ class HomePageActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController
         homePagebinding.bottomNavigationView.setupWithNavController(navController)
+      /*  navController.addOnDestinationChangedListener( object : NavController.OnDestinationChangedListener {
+            override fun onDestinationChanged(
+                controller: NavController,
+                destination: NavDestination,
+                arguments: Bundle?
+            ) {
+                homePagebinding.bottomNavigationView.isVisible =  destination.id == R.id.inspirationFragment
+            }
+        })*/
     }
 }
