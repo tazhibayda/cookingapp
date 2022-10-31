@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/inspirationFragment">
+
+    <fragment
+        android:id="@+id/inspirationFragment"
+        android:name="com.example.cookingapp.InspirationFragment"
+        android:label="InspirationFragment" >
+        <action
+            android:id="@+id/action_inspirationFragment_to_recipesFragment"
+            app:destination="@id/recipesFragment"
+            app:popUpTo="@id/inspirationFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipesFragment"
+        android:name="com.example.cookingapp.RecipesFragment"
+        android:label="RecipesFragment" >
+        <action
+            android:id="@+id/action_recipesFragment_to_inspirationFragment"
+            app:destination="@id/inspirationFragment"
+            app:popUpTo="@id/inspirationFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

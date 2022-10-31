@@ -1,5 +1,6 @@
 package com.example.cookingapp.adapters
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import com.example.cookingapp.models.RecipeModel
 
 class RecipeAdapter(private val context: Context, courseModelArrayList: ArrayList<RecipeModel>) :
     RecyclerView.Adapter<RecipeAdapter.Viewholder>() {
+
     private val courseModelArrayList: ArrayList<RecipeModel>
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeAdapter.Viewholder {
         // to inflate the layout for each item of recycler view.
@@ -19,6 +21,7 @@ class RecipeAdapter(private val context: Context, courseModelArrayList: ArrayLis
         return Viewholder(view)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: RecipeAdapter.Viewholder, position: Int) {
         // to set data to textview and imageview of each card layout
         val model: RecipeModel = courseModelArrayList[position]

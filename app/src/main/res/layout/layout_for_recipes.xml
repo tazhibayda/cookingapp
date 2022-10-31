@@ -5,13 +5,15 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:padding="10dp"
+    android:padding="25dp"
     app:cardCornerRadius="15dp"
+
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp">
 
 
         <ImageView
@@ -20,7 +22,6 @@
             android:layout_height="99dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:contentDescription="asd"
