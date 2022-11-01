@@ -2,4 +2,5 @@
 <resources>
     <dimen name="pic_width">20px</dimen>
     <dimen name="pic_height">30dp</dimen>
+    <dimen name="bottom_offset">100dp</dimen>
 </resources>

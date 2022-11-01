@@ -5,13 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cookingapp.adapters.InspirationsAdapter
+import com.example.cookingapp.databinding.FragmentHomeBinding
+import com.example.cookingapp.databinding.FragmentInspirationsBinding
 import com.example.cookingapp.models.InspirationsModel
 
 class InspirationFragment : Fragment() {
-
+    private  var _binding :FragmentInspirationsBinding? = null
+    private  val binding: FragmentInspirationsBinding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -37,6 +41,17 @@ class InspirationFragment : Fragment() {
         recipesDay.adapter = insAdapter
 
         return myview
+    }
+
+   /* override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.browseMoreRecipes.setOnClickListener { view :View->
+            view.findNavController().navigate(R.id.action_inspirationFragment_to_recipesFragment)
+        }
+    }*/
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 

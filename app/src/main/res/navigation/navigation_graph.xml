@@ -3,26 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/inspirationFragment">
-
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.cookingapp.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_inspirationFragment"
+            app:destination="@id/inspirationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/inspirationFragment"
         android:name="com.example.cookingapp.InspirationFragment"
         android:label="InspirationFragment" >
         <action
             android:id="@+id/action_inspirationFragment_to_recipesFragment"
-            app:destination="@id/recipesFragment"
-            app:popUpTo="@id/inspirationFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/recipesFragment" />
     </fragment>
     <fragment
         android:id="@+id/recipesFragment"
         android:name="com.example.cookingapp.RecipesFragment"
         android:label="RecipesFragment" >
         <action
+            android:id="@+id/action_recipesFragment_to_cookNowFragment"
+            app:destination="@id/cookNowFragment" />
+        <action
             android:id="@+id/action_recipesFragment_to_inspirationFragment"
-            app:destination="@id/inspirationFragment"
-            app:popUpTo="@id/inspirationFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/inspirationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cookNowFragment"
+        android:name="com.example.cookingapp.CookNowFragment"
+        android:label="CookNowFragment" >
+        <action
+            android:id="@+id/action_cookNowFragment_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+        <action
+            android:id="@+id/action_cookNowFragment_to_inspirationFragment"
+            app:destination="@id/inspirationFragment" />
     </fragment>
 </navigation>
