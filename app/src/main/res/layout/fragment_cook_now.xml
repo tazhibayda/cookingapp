@@ -131,16 +131,5 @@
     </LinearLayout>
 
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigatin_view"
-        android:layout_width="match_parent"
-        android:layout_margin="20dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:circularflow_defaultRadius="10dp"
-        android:background="@drawable/layout_bg"
-        app:menu="@menu/bottom_bar_menu"
-        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

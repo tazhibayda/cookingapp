@@ -11,12 +11,12 @@
         android:icon="@drawable/bottombar_myrecipes"
         android:title="@string/myrecipes"/>
     <item
-        android:id="@+id/cooknow"
+        android:id="@+id/cookNowFragment"
         android:enabled="true"
         android:icon="@drawable/bottombar_cooknow"
         android:title="@string/cooknow"/>
     <item
-        android:id="@+id/settings"
+        android:id="@+id/settingsFragment"
         android:enabled="true"
         android:icon="@drawable/bottombar_settings"
         android:title="@string/settings"/>

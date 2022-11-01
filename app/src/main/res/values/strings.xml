@@ -25,4 +25,18 @@ Then add water and paprika. Select program no. 3 and cook for 20 mins.</string>
     <string name="ren_redzepi_n_recommends_you">René Redzepi \nrecommends you</string>
     <string name="sub_text_recommend">Spice lovers will slurp up this soup in seconds.Featuring chili powder, smoked paprika, and cayenne pepper, every bowl brings the heat.</string>
     <string name="browse_more_recieps">Browse more recieps</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>

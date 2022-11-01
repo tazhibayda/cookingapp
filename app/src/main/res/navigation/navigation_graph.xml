@@ -10,7 +10,8 @@
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_inspirationFragment"
-            app:destination="@id/inspirationFragment" />
+            app:destination="@id/inspirationFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/inspirationFragment"
@@ -18,7 +19,14 @@
         android:label="InspirationFragment" >
         <action
             android:id="@+id/action_inspirationFragment_to_recipesFragment"
-            app:destination="@id/recipesFragment" />
+            app:destination="@id/recipesFragment"
+            app:popUpTo="@id/inspirationFragment" />
+        <action
+            android:id="@+id/action_inspirationFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_inspirationFragment_to_cookNowFragment"
+            app:destination="@id/cookNowFragment" />
     </fragment>
     <fragment
         android:id="@+id/recipesFragment"
@@ -30,6 +38,9 @@
         <action
             android:id="@+id/action_recipesFragment_to_inspirationFragment"
             app:destination="@id/inspirationFragment" />
+        <action
+            android:id="@+id/action_recipesFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/cookNowFragment"
@@ -40,6 +51,26 @@
             app:destination="@id/recipesFragment" />
         <action
             android:id="@+id/action_cookNowFragment_to_inspirationFragment"
-            app:destination="@id/inspirationFragment" />
+            app:destination="@id/inspirationFragment"
+            app:popUpTo="@id/cookNowFragment" />
+        <action
+            android:id="@+id/action_cookNowFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.cookingapp.SettingsFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_cookNowFragment"
+            app:destination="@id/cookNowFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_inspirationFragment"
+            app:destination="@id/inspirationFragment"
+            app:popUpTo="@id/settingsFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

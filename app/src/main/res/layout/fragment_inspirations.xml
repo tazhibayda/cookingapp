@@ -151,6 +151,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:cornerRadius="8dp"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="300dp"
             android:textColor="#1C0F13"
             android:textSize="20sp"
             android:fontFamily="@font/work_sans"
