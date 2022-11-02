@@ -5,7 +5,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:padding="25dp"
     app:cardCornerRadius="15dp"
 
     >
@@ -13,25 +12,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp">
+        android:padding="15dp">
 
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/recipe_image"
             android:layout_width="153dp"
             android:layout_height="99dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:contentDescription="asd"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.592"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.100000024"
-            app:srcCompat="@drawable/chef" />
+            app:srcCompat="@drawable/chef"
+            style="@style/Style.App.circleImageView"
+            />
 
         <TextView
             android:id="@+id/recipe_name"
@@ -51,15 +44,11 @@
 
         <TextView
             android:id="@+id/recipe_text"
-            android:layout_width="140dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/recipe_name"
-            android:layout_marginStart="10dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
-            android:lines="2"
             android:text="TextView"
-            android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/tableRow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

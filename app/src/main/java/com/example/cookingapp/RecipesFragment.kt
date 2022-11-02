@@ -23,21 +23,13 @@ class RecipesFragment : Fragment() {
         val recieps: RecyclerView = view.findViewById(R.id.my_recipes)
 
         val reciepList: ArrayList<RecipeModel> = ArrayList<RecipeModel>()
-        reciepList.add(RecipeModel("DSA in Java", "asdhiasdasdbashd", 45, 3, R.drawable.chef))
-        reciepList.add(RecipeModel("DSA in Java", "asdhiasdasdbashd", 45, 3, R.drawable.chef))
-        reciepList.add(RecipeModel("What is Lorem Ipsum?",
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-            45,
-            3,
-            R.drawable.chef))
-        reciepList.add(RecipeModel("DSA in Java", "asdhiasdasdbashd", 45, 3, R.drawable.chef))
-        reciepList.add(RecipeModel("DSA in Java", "asdhiasdasdbashd", 45, 3, R.drawable.chef))
-        reciepList.add(RecipeModel("DSA in Java", "asdhiasdasdbashd", 45, 3, R.drawable.chef))
-        reciepList.add(RecipeModel("DSA in Java ajkn",
-            "aasdassdhiasdasdbashd",
-            90,
-            6,
-            R.drawable.dishes))
+        reciepList.add(RecipeModel("Veggie breakfast", "Healthy food for busy people", 5, 1, R.drawable.day2_image))
+        reciepList.add(RecipeModel("Italian pasta", "Tasty traditional dish.\nNot only for Italian who went to Malta", 45, 4, R.drawable.italian_pasta))
+        reciepList.add(RecipeModel("Cheese’n’Meat", "Let’s pray only for \nCheesus!", 3, 2, R.drawable.cheesen_meat))
+        reciepList.add(RecipeModel("Pumpkin Soup", "Feel the spiciness and  season vegetables", 50, 4, R.drawable.pupmpkin_soup))
+        reciepList.add(RecipeModel("Asian inspired pasta", "Missing pad-thai and living in Italy? Check this out", 45, 4, R.drawable.asian_pasta))
+        reciepList.add(RecipeModel("Croatian wedding", "Some tasty things", 90, 4, R.drawable.croatia))
+        reciepList.add(RecipeModel("Vegan party set", "Alternative food proposition for weekend party", 45, 4, R.drawable.vegan))
 
         val recipeAdapter = RecipeAdapter(HomePageActivity(), reciepList)
         val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)

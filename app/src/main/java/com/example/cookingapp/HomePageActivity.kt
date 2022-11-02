@@ -29,6 +29,7 @@ class HomePageActivity : AppCompatActivity() {
                 destination: NavDestination,
                 arguments: Bundle?
             ) {
+                homePagebinding.bottomNavigationView.isVisible = destination.id != R.id.loginFragment
                 homePagebinding.bottomNavigationView.isVisible = destination.id != R.id.homeFragment
             }
         })

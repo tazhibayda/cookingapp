@@ -43,12 +43,7 @@ class InspirationFragment : Fragment() {
         return myview
     }
 
-   /* override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.browseMoreRecipes.setOnClickListener { view :View->
-            view.findNavController().navigate(R.id.action_inspirationFragment_to_recipesFragment)
-        }
-    }*/
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
