@@ -39,7 +39,6 @@ class InspirationFragment : Fragment() {
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recipesDay.layoutManager = layoutManager
         recipesDay.adapter = insAdapter
-
         return myview
     }
 

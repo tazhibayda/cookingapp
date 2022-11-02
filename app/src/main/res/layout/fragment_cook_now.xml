@@ -11,93 +11,105 @@
         android:id="@+id/cooking_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:gravity="center"
         android:text="@string/cooking_time"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cooking_card"
-        app:layout_constraintTop_toBottomOf="@id/cooking_title"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
-        app:cardCornerRadius="10dp"
-        android:layout_height="wrap_content">
-        <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cooking_title">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cooking_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="27dp">
-            <TextView
-                android:id="@+id/cooking_step_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="Step 1/10"
-                android:textSize="15sp"
-                android:fontFamily="@font/work_sans"
-                android:textAppearance="@style/Widget.MaterialComponents.MaterialCalendar.Day"
-                />
-            <TextView
-                android:id="@+id/cooking_connect_text"
-                android:text="Connected to TM6"
-                app:layout_constraintStart_toEndOf="@id/cooking_step_text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:fontFamily="@font/work_sans"
-                android:textColor=" #1C0F13"/>
-
-            <TextView
-                android:id="@+id/cooking_start_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Start with basics"
-                android:textSize="24sp"
-                android:textColor="#1C0F13"
-                android:lineHeight="20sp"
-                android:fontFamily="@font/work_sans"
-                android:textFontWeight="500"
-                app:layout_constraintTop_toBottomOf="@id/cooking_step_text"
-                android:layout_marginTop="25dp"
-                app:layout_constraintStart_toStartOf="parent"
-                />
-            <TextView
-                android:id="@+id/cooking_text1"
-                app:layout_constraintTop_toBottomOf="@id/cooking_start_text"
-                app:layout_constraintStart_toStartOf="parent"
-                android:text="Chop pumpkin and sweet potato into small chunks, put them to the bowl."
-                android:layout_marginTop="20dp"
-                android:textSize="16sp"
-                android:textColor="#1C0F13"
-                android:fontFamily="@font/work_sans"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-            android:id="@+id/cooking_text2"
+            android:layout_marginBottom="340dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cooking_text1"
-            android:text="Then add water and paprika. Select program no. 3 and cook for 20 mins."
-            android:layout_marginTop="20dp"
-            android:textSize="16sp"
-            android:textColor="#1C0F13"
-            android:fontFamily="@font/work_sans"
+            app:layout_constraintTop_toTopOf="parent">
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="27dp">
 
-    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/cooking_step_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/work_sans"
+                    android:text="Step 1/10"
+                    android:textAppearance="@style/Widget.MaterialComponents.MaterialCalendar.Day"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
+                <TextView
+                    android:id="@+id/cooking_connect_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/work_sans"
+                    android:text="Connected to TM6"
+                    android:textColor=" #1C0F13"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cooking_step_text"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/cooking_start_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/work_sans"
+                    android:lineHeight="20sp"
+                    android:text="Start with basics"
+                    android:textColor="#1C0F13"
+                    android:textFontWeight="500"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cooking_step_text" />
+
+                <TextView
+                    android:id="@+id/cooking_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/work_sans"
+                    android:text="Chop pumpkin and sweet potato into small chunks, put them to the bowl."
+                    android:textColor="#1C0F13"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cooking_start_text" />
+
+                <TextView
+                    android:id="@+id/cooking_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/work_sans"
+                    android:text="Then add water and paprika. Select program no. 3 and cook for 20 mins."
+                    android:textColor="#1C0F13"
+                    android:textSize="16sp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cooking_text1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

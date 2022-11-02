@@ -11,6 +11,7 @@
         <action
             android:id="@+id/action_homeFragment_to_inspirationFragment"
             app:destination="@id/inspirationFragment"
+            app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -18,67 +19,30 @@
         android:name="com.example.cookingapp.InspirationFragment"
         android:label="InspirationFragment" >
         <action
-            android:id="@+id/action_inspirationFragment_to_recipesFragment"
-            app:destination="@id/recipesFragment"
+            android:id="@+id/action_inspirationFragment_to_cookNowFragment4"
+            app:destination="@id/cookNowFragment"
             app:popUpTo="@id/inspirationFragment" />
-        <action
-            android:id="@+id/action_inspirationFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
-        <action
-            android:id="@+id/action_inspirationFragment_to_cookNowFragment"
-            app:destination="@id/cookNowFragment" />
     </fragment>
     <fragment
         android:id="@+id/recipesFragment"
         android:name="com.example.cookingapp.RecipesFragment"
-        android:label="RecipesFragment" >
-        <action
-            android:id="@+id/action_recipesFragment_to_cookNowFragment"
-            app:destination="@id/cookNowFragment" />
-        <action
-            android:id="@+id/action_recipesFragment_to_inspirationFragment"
-            app:destination="@id/inspirationFragment" />
-        <action
-            android:id="@+id/action_recipesFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
-    </fragment>
+        android:label="RecipesFragment" />
     <fragment
         android:id="@+id/cookNowFragment"
         android:name="com.example.cookingapp.CookNowFragment"
-        android:label="CookNowFragment" >
-        <action
-            android:id="@+id/action_cookNowFragment_to_recipesFragment"
-            app:destination="@id/recipesFragment" />
-        <action
-            android:id="@+id/action_cookNowFragment_to_inspirationFragment"
-            app:destination="@id/inspirationFragment"
-            app:popUpTo="@id/cookNowFragment" />
-        <action
-            android:id="@+id/action_cookNowFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
-    </fragment>
+        android:label="CookNowFragment" />
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.cookingapp.SettingsFragment"
-        android:label="SettingsFragment" >
-        <action
-            android:id="@+id/action_settingsFragment_to_recipesFragment"
-            app:destination="@id/recipesFragment" />
-        <action
-            android:id="@+id/action_settingsFragment_to_cookNowFragment"
-            app:destination="@id/cookNowFragment" />
-        <action
-            android:id="@+id/action_settingsFragment_to_inspirationFragment"
-            app:destination="@id/inspirationFragment"
-            app:popUpTo="@id/settingsFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
+        android:label="SettingsFragment" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.cookingapp.LoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

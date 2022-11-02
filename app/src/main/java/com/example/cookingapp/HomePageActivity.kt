@@ -6,6 +6,8 @@ import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.example.cookingapp.databinding.HomePageBinding
 
@@ -23,15 +25,15 @@ class HomePageActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentMyNavHostFragment) as NavHostFragment
         navController = navHostFragment.navController
         homePagebinding.bottomNavigationView.setupWithNavController(navController)
-        navController.addOnDestinationChangedListener( object : NavController.OnDestinationChangedListener {
-            override fun onDestinationChanged(
-                controller: NavController,
-                destination: NavDestination,
-                arguments: Bundle?
-            ) {
-                homePagebinding.bottomNavigationView.isVisible = destination.id != R.id.loginFragment
-                homePagebinding.bottomNavigationView.isVisible = destination.id != R.id.homeFragment
+
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            homePagebinding.bottomNavigationView.isVisible = when (destination.id) {
+                R.id.loginFragment,
+                R.id.homeFragment
+                -> false
+                else -> true
             }
-        })
+        }
     }
 }
