@@ -1,3 +1,4 @@
+/*
 package com.example.cookingapp.adapters
 
 import android.annotation.SuppressLint
@@ -16,11 +17,13 @@ class InspirationsAdapter(private val context: Context,inspirationList: ArrayLis
 
     private val inspirationList :ArrayList<InspirationsModel>
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+    */
+/*override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view :View =LayoutInflater.from(parent.context).inflate(R.layout.layout_for_inspiration_item,
         parent,false)
         return MyViewHolder(view)
-    }
+    }*//*
+
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: InspirationsAdapter.MyViewHolder, position: Int) {
         val model:InspirationsModel = inspirationList[position]
@@ -59,4 +62,4 @@ class InspirationsAdapter(private val context: Context,inspirationList: ArrayLis
 
 
 
-}
+}*/

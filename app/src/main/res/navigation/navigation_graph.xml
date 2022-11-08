@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/animationFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.cookingapp.HomeFragment"
+        android:name="com.example.cookingapp.fragments.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_inspirationFragment"
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/inspirationFragment"
-        android:name="com.example.cookingapp.InspirationFragment"
+        android:name="com.example.cookingapp.fragments.InspirationFragment"
         android:label="InspirationFragment" >
         <action
             android:id="@+id/action_inspirationFragment_to_cookNowFragment4"
@@ -25,24 +25,22 @@
     </fragment>
     <fragment
         android:id="@+id/recipesFragment"
-        android:name="com.example.cookingapp.RecipesFragment"
+        android:name="com.example.cookingapp.fragments.RecipesFragment"
         android:label="RecipesFragment" />
     <fragment
         android:id="@+id/cookNowFragment"
-        android:name="com.example.cookingapp.CookNowFragment"
+        android:name="com.example.cookingapp.fragments.CookNowFragment"
         android:label="CookNowFragment" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.cookingapp.SettingsFragment"
+        android:name="com.example.cookingapp.fragments.SettingsFragment"
         android:label="SettingsFragment" />
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.cookingapp.LoginFragment"
-        android:label="LoginFragment" >
+        android:id="@+id/animationFragment"
+        android:name="com.example.cookingapp.fragments.AnimationFragment"
+        android:label="AnimationFragment" >
         <action
-            android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_animationFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

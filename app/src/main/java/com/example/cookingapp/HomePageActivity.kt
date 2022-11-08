@@ -1,6 +1,9 @@
 package com.example.cookingapp
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
@@ -29,11 +32,11 @@ class HomePageActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             homePagebinding.bottomNavigationView.isVisible = when (destination.id) {
-                R.id.loginFragment,
-                R.id.homeFragment
-                -> false
+                R.id.homeFragment,R.id.animationFragment -> false
                 else -> true
             }
         }
+
+
     }
 }
