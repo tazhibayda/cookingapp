@@ -7,34 +7,37 @@ import androidx.lifecycle.ViewModel
 import com.example.cookingapp.pojo.Meal
 import com.example.cookingapp.pojo.ReceipFoodList
 import com.example.cookingapp.retrofit.retrofitInstance
+import com.example.cookingapp.retrofit.retrofitInstance.api
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Retrofit
 
-class InspirationViewModel:ViewModel() {
-    private var randomMealLiveData  = MutableLiveData<Meal>()
-    fun getRandomMeal(){
-        retrofitInstance.api.getRandomReceip().enqueue(object : Callback<ReceipFoodList>{
+class ReceipActivityViewModel:ViewModel() {
+
+    private var receipDetailsLiveData = MutableLiveData<Meal>()
+
+    fun getReceipDetail(id:String){
+        retrofitInstance.api.getReceipDetails(id).enqueue(object :Callback<ReceipFoodList>{
             override fun onResponse(
                 call: Call<ReceipFoodList>,
-                response: Response<ReceipFoodList>
+                response: Response<ReceipFoodList>,
             ) {
-                if(response.body() != null){
-                    val randomMeal :Meal  = response.body()!!.meals[0]
-                    randomMealLiveData.value = randomMeal
+                if(response.body() !=null){
+                    receipDetailsLiveData.value = response.body()!!.meals[0]
                 }
                 else{
                     return
                 }
             }
+
             override fun onFailure(call: Call<ReceipFoodList>, t: Throwable) {
-                Log.d("InspirationFragment", t.message.toString())
+            Log.d("ReceipActivity", t.message.toString())
             }
+
         })
-
     }
-
-    fun observeRandomMealLiveData():LiveData<Meal>{
-        return randomMealLiveData
+    fun observerReceipDetailsLiveData():LiveData<Meal>{
+        return receipDetailsLiveData
     }
 }
