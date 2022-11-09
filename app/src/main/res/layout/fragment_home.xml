@@ -32,6 +32,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32999998"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
@@ -40,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:fontFamily="@font/work_sans"
-        android:text="All the recipes \n on your fingertips"
+        android:text="@string/all_the_recipes_n_on_your_fingertips"
         android:textAlignment="center"
         android:textColor="#1C0F13"
         android:textFontWeight="600"
@@ -56,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12sp"
-        android:text="Cooking on Thermomix   made easy"
+        android:text="@string/cooking_on_thermomix_made_easy"
         android:textFontWeight="400"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,23 +1,31 @@
 package com.example.cookingapp.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.cookingapp.databinding.FragmentInspirationsBinding
 import com.example.cookingapp.pojo.Meal
-import com.example.cookingapp.pojo.ReceipFoodList
-import com.example.cookingapp.retrofit.retrofitInstance
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.cookingapp.viewModel.InspirationViewModel
+
 
 class InspirationFragment : Fragment() {
-
     private lateinit var binding :FragmentInspirationsBinding
+    private lateinit var homeMvvm : InspirationViewModel
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        homeMvvm = ViewModelProvider(this)[InspirationViewModel::class.java]
+
+    }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,24 +38,22 @@ class InspirationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-    retrofitInstance.api.getRandomReceip().enqueue(object :Callback<ReceipFoodList>{
-        override fun onResponse(call: Call<ReceipFoodList>, response: Response<ReceipFoodList>) {
-            if(response.body() !=null){
-                val randomreceip :Meal =response.body()!!.meals[0]
-                Glide.with(this@InspirationFragment)
-                    .load(randomreceip.strMealThumb)
-                    .into(binding.imgRandomReceip)
-            }
-            else{
-                return
-            }
-        }
+        homeMvvm.getRandomMeal()
 
-        override fun onFailure(call: Call<ReceipFoodList>, t: Throwable) {
-            Log.d("InspirationFragment",t.message.toString())
-        }
-    })
+        observeRandomMeal()
     }
 
+    private fun observeRandomMeal() {
+        homeMvvm.observeRandomMealLiveData().observe(viewLifecycleOwner, object:Observer<Meal>{
+            override fun onChanged(t: Meal?) {
+            Glide.with(this@InspirationFragment)
+                .load(t!!.strMealThumb)
+                .into(binding.imgRandomReceip)
+            }
+        })
+    }
+
+
 }
+
 
