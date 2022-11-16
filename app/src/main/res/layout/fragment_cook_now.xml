@@ -92,7 +92,7 @@
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/work_sans"
                     android:text="Chop pumpkin and sweet potato into small chunks, put them to the bowl.
-                                  Then add water and paprika. Select program no. 3 and cook for 20 mins."
+                    Then add water and paprika. Select program no. 3 and cook for 20 mins."
                     android:textColor="#1C0F13"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -152,7 +152,7 @@
                 android:id="@+id/button_decr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-10"
+                android:text="previous"
                 app:layout_constraintStart_toStartOf="@id/progress_bar"
                 app:layout_constraintTop_toBottomOf="@id/progress_bar" />
 
@@ -160,8 +160,11 @@
                 android:id="@+id/button_incr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+10"
+                android:layout_marginStart="112dp"
+                android:text="next"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/progress_bar"
+                app:layout_constraintStart_toStartOf="@+id/button_decr"
                 app:layout_constraintTop_toBottomOf="@id/progress_bar" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
