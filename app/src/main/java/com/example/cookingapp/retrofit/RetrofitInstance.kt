@@ -2,9 +2,8 @@ package com.example.cookingapp.retrofit
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
-object retrofitInstance {
+object RetrofitInstance {
     val api:ReceipFoodApi by lazy{
         Retrofit.Builder()
             .baseUrl("https://www.themealdb.com/api/json/v1/1/")

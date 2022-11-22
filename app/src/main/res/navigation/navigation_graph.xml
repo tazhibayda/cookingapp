@@ -41,6 +41,7 @@
         android:label="AnimationFragment" >
         <action
             android:id="@+id/action_animationFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

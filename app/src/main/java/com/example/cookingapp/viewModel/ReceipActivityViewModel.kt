@@ -6,19 +6,17 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.cookingapp.pojo.Meal
 import com.example.cookingapp.pojo.ReceipFoodList
-import com.example.cookingapp.retrofit.retrofitInstance
-import com.example.cookingapp.retrofit.retrofitInstance.api
+import com.example.cookingapp.retrofit.RetrofitInstance
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
 
 class ReceipActivityViewModel:ViewModel() {
 
     private var receipDetailsLiveData = MutableLiveData<Meal>()
 
     fun getReceipDetail(id:String){
-        retrofitInstance.api.getReceipDetails(id).enqueue(object :Callback<ReceipFoodList>{
+        RetrofitInstance.api.getReceipDetails(id).enqueue(object :Callback<ReceipFoodList>{
             override fun onResponse(
                 call: Call<ReceipFoodList>,
                 response: Response<ReceipFoodList>,

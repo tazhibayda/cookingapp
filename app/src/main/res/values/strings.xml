@@ -48,4 +48,6 @@ Then add water and paprika. Select program no. 3 and cook for 20 mins.</string>
     <string name="cooking_on_thermomix_made_easy">Cooking on Thermomix made easy</string>
     <string name="all_the_recipes_n_on_your_fingertips">All the recipes \n on your fingertips</string>
     <string name="instructions">- Instructions:</string>
+    <string name="exit" />
+    <string name="exi">exit</string>
 </resources>
