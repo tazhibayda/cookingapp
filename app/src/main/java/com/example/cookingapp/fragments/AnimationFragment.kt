@@ -20,7 +20,7 @@ class AnimationFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_animation, container, false)
         Handler(Looper.getMainLooper()!!).postDelayed({
             findNavController().navigate(R.id.action_animationFragment_to_homeFragment)
-        },4000)
+        },3000)
 
         return view
     }

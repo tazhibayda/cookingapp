@@ -50,4 +50,6 @@ Then add water and paprika. Select program no. 3 and cook for 20 mins.</string>
     <string name="instructions">- Instructions:</string>
     <string name="exit" />
     <string name="exi">exit</string>
+    <string name="favourite_recipes">Favourite recipes</string>
+    <string name="favourite">favourite</string>
 </resources>

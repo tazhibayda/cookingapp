@@ -32,10 +32,6 @@
         android:name="com.example.cookingapp.fragments.CookNowFragment"
         android:label="CookNowFragment" />
     <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.example.cookingapp.fragments.SettingsFragment"
-        android:label="SettingsFragment" />
-    <fragment
         android:id="@+id/animationFragment"
         android:name="com.example.cookingapp.fragments.AnimationFragment"
         android:label="AnimationFragment" >
@@ -44,4 +40,9 @@
             app:destination="@id/homeFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.example.cookingapp.fragments.FavouriteFragment"
+        android:label="fragment_favourite"
+        tools:layout="@layout/fragment_favourite" />
 </navigation>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="210dp"
-    android:layout_height="140dp"
+    android:layout_width="218dp"
+    android:layout_height="150dp"
     app:cardCornerRadius="25dp"
     android:elevation="7dp"
     app:cardUseCompatPadding="true">
-    
+
     <ImageView
         android:id="@+id/popular_item"
         android:layout_width="match_parent"

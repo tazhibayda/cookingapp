@@ -16,9 +16,12 @@ interface ReceipFoodApi {
     fun getReceipDetails(@Query("i")id:String):Call<ReceipFoodList>
 
     @GET("filter.php?")
-    fun getPopulatItems(@Query("c")categoryname:String) :Call<MealsByCategoryList>
+    fun getPopularItems(@Query("c")categoryname:String) :Call<MealsByCategoryList>
 
     @GET("categories.php")
     fun getCategories():Call<CategoryList>
+
+    @GET("filter.php")
+    fun getMealsByCategory(@Query("c")categoryName:String) : Call<MealsByCategoryList>
 
 }

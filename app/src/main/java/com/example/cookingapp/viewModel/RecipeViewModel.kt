@@ -4,14 +4,19 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.cookingapp.db.RecipeDatabase
 import com.example.cookingapp.pojo.Meal
 import com.example.cookingapp.pojo.ReceipFoodList
 import com.example.cookingapp.retrofit.RetrofitInstance
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ReceipActivityViewModel:ViewModel() {
+class RecipeViewModel(
+    val recipeDatabase: RecipeDatabase
+):ViewModel() {
 
     private var receipDetailsLiveData = MutableLiveData<Meal>()
 
@@ -38,4 +43,10 @@ class ReceipActivityViewModel:ViewModel() {
     fun observerReceipDetailsLiveData():LiveData<Meal>{
         return receipDetailsLiveData
     }
+    fun insertRecipe(meal: Meal){
+        viewModelScope.launch {
+            recipeDatabase.recipDao().update(meal)
+        }
+    }
+
 }

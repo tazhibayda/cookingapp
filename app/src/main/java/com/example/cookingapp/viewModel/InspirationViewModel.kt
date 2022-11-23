@@ -4,17 +4,29 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.cookingapp.db.RecipeDatabase
 import com.example.cookingapp.pojo.*
 import com.example.cookingapp.retrofit.RetrofitInstance
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class InspirationViewModel : ViewModel() {
+class InspirationViewModel(
+    private val recipeDatabase:RecipeDatabase
+    ) : ViewModel() {
     private var randomMealLiveData = MutableLiveData<Meal>()
-    private var popularItemsLiveData = MutableLiveData<List<MealsByCategory>>()
+    private var popularItemsLiveData = MutableLiveData<List<MealsByCategoryList>>()
     private var categoriesLiveData = MutableLiveData<List<Category>>()
+    private var favouritesRecipesLiveData = recipeDatabase.recipDao().getAllMeals()
+
+    private var savedStateRandomMeal :Meal? = null
     fun getRandomMeal() {
+        savedStateRandomMeal?.let { randomRecipe->
+            randomMealLiveData.postValue(randomRecipe)
+            return
+        }
         RetrofitInstance.api.getRandomReceip().enqueue(object : Callback<ReceipFoodList> {
             override fun onResponse(
                 call: Call<ReceipFoodList>,
@@ -23,6 +35,7 @@ class InspirationViewModel : ViewModel() {
                 if (response.body() != null) {
                     val randomMeal: Meal = response.body()!!.meals[0]
                     randomMealLiveData.value = randomMeal
+                    savedStateRandomMeal = randomMeal
                 } else {
                     return
                 }
@@ -36,24 +49,10 @@ class InspirationViewModel : ViewModel() {
     }
 
     fun onViewCreated() {
-        getPopularItems()
         getRandomMeal()
     }
 
-    fun getPopularItems() {
-        RetrofitInstance.api.getPopulatItems("Seafood").enqueue(object : Callback<MealsByCategoryList> {
-            override fun onResponse(call: Call<MealsByCategoryList>, response: Response<MealsByCategoryList>) {
-                if (response.body() != null) {
-                    popularItemsLiveData.value = response.body()!!.meals
-                }
-            }
 
-            override fun onFailure(call: Call<MealsByCategoryList>, t: Throwable) {
-                Log.d("InspirationFragment", t.message.toString())
-            }
-
-        })
-    }
 
     fun getCategories(){
         RetrofitInstance.api.getCategories().enqueue(object :Callback<CategoryList>{
@@ -69,15 +68,32 @@ class InspirationViewModel : ViewModel() {
 
         })
     }
+    fun deleteRecipe(meal: Meal){
+        viewModelScope.launch {
+            recipeDatabase.recipDao().delete(meal)
+        }
+    }
+    fun insertRecipe(meal: Meal){
+        viewModelScope.launch {
+            recipeDatabase.recipDao().update(meal)
+        }
+    }
+
+
+
 
     fun observeRandomMealLiveData(): LiveData<Meal> {
         return randomMealLiveData
     }
 
-    fun observePopularItemsLiveData(): LiveData<List<MealsByCategory>> {
+    fun observePopularItemsLiveData(): LiveData<List<MealsByCategoryList>> {
         return popularItemsLiveData
     }
     fun observeCategoriesLiveData():LiveData<List<Category>>{
         return categoriesLiveData
     }
+    fun observeFavouritesRecipesLiveDara():LiveData<List<Meal>>{
+        return favouritesRecipesLiveData
+    }
+
 }

@@ -6,28 +6,35 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.cookingapp.databinding.ActivityReceipBinding
+import com.example.cookingapp.db.RecipeDatabase
 import com.example.cookingapp.fragments.InspirationFragment
 import com.example.cookingapp.pojo.Meal
-import com.example.cookingapp.viewModel.ReceipActivityViewModel
+import com.example.cookingapp.viewModel.RecipeViewModel
+import com.example.cookingapp.viewModel.RecipeViewModelFactory
 
 class ReceipActivity : AppCompatActivity() {
     private lateinit var receipId :String
     private lateinit var receipName :String
     private lateinit var receipThumb :String
     private lateinit var binding :ActivityReceipBinding
-    private lateinit var receipMvvm :ReceipActivityViewModel
+    private lateinit var receipMvvm :RecipeViewModel
     private lateinit var youtubeLink :String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityReceipBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        receipMvvm =ViewModelProvider(this)[ReceipActivityViewModel::class.java]
-
+        val recipeDatabase = RecipeDatabase.getInstance(this)
+        val viewModelFactory = RecipeViewModelFactory(recipeDatabase)
+        receipMvvm = ViewModelProvider(this,viewModelFactory).get(RecipeViewModel::class.java)
+/*
+        receipMvvm =ViewModelProvider(this)[RecipeViewModel::class.java]
+*/
 
         getReceipInformationFromIntent()
         setInformationInViews()
@@ -36,6 +43,16 @@ class ReceipActivity : AppCompatActivity() {
         onyoutube()
         receipMvvm.getReceipDetail(receipId)
         observeReceipLiveData()
+        onFavouriteClick()
+    }
+
+    private fun onFavouriteClick() {
+        binding.btnAddToFav.setOnClickListener{
+            recipeToSave?.let {
+                receipMvvm.insertRecipe(it)
+                Toast.makeText(this,"Recipe saved",Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
     private fun onyoutube() {
@@ -44,18 +61,19 @@ class ReceipActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
+    private var recipeToSave:Meal? =null
     private fun observeReceipLiveData() {
         receipMvvm.observerReceipDetailsLiveData().observe(this,object : Observer<Meal>{
             @SuppressLint("SetTextI18n")
             override fun onChanged(t: Meal?) {
                 onResponseCase()
-                val receip = t
-                binding.categotyText.text = receip!!.strCategory
-                binding.areaText.text = receip.strArea
-                binding.instructionsText.text = receip.strInstructions
+                val recipe = t
+                recipeToSave = recipe
 
-                youtubeLink = receip.strYoutube
+                binding.categotyText.text = recipe!!.strCategory
+                binding.areaText.text = recipe.strArea
+                binding.instructionsText.text = recipe.strInstructions
+                youtubeLink = recipe.strYoutube
             }
 
         })
