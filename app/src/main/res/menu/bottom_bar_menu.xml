@@ -4,7 +4,7 @@
         android:id="@+id/inspirationFragment"
         android:enabled="true"
         android:icon="@drawable/bottombar_inspriations"
-        android:title="@string/inspriations"/>
+        android:title="@string/home"/>
     <item
         android:id="@+id/recipesFragment"
         android:enabled="true"

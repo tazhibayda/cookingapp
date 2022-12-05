@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/animationFragment">
+    app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.cookingapp.fragments.HomeFragment"
@@ -13,36 +13,44 @@
             app:destination="@id/inspirationFragment"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment_to_cookNowFragment"
+            app:destination="@id/cookNowFragment" />
     </fragment>
     <fragment
         android:id="@+id/inspirationFragment"
         android:name="com.example.cookingapp.fragments.InspirationFragment"
         android:label="InspirationFragment" >
         <action
-            android:id="@+id/action_inspirationFragment_to_cookNowFragment4"
-            app:destination="@id/cookNowFragment"
-            app:popUpTo="@id/inspirationFragment" />
+            android:id="@+id/action_inspirationFragment_to_searchFragment2"
+            app:destination="@id/searchFragment" />
     </fragment>
     <fragment
         android:id="@+id/recipesFragment"
         android:name="com.example.cookingapp.fragments.RecipesFragment"
         android:label="RecipesFragment" />
     <fragment
-        android:id="@+id/cookNowFragment"
-        android:name="com.example.cookingapp.fragments.CookNowFragment"
-        android:label="CookNowFragment" />
-    <fragment
         android:id="@+id/animationFragment"
         android:name="com.example.cookingapp.fragments.AnimationFragment"
         android:label="AnimationFragment" >
         <action
             android:id="@+id/action_animationFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/favouriteFragment"
         android:name="com.example.cookingapp.fragments.FavouriteFragment"
         android:label="fragment_favourite"
         tools:layout="@layout/fragment_favourite" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.cookingapp.fragments.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/cookNowFragment"
+        android:name="com.example.cookingapp.fragments.CookNowFragment"
+        android:label="CookNowFragment"
+        tools:layout="@layout/fragment_cook_now"/>
+
 </navigation>

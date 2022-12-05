@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Cooking app</string>
-    <string name="inspriations">Inspriations</string>
+    <string name="home">Inspriations</string>
     <string name="myrecipes">My recipes</string>
     <string name="cooknow">Cook now!</string>
     <string name="settings">Settings</string>
@@ -52,4 +52,12 @@ Then add water and paprika. Select program no. 3 and cook for 20 mins.</string>
     <string name="exi">exit</string>
     <string name="favourite_recipes">Favourite recipes</string>
     <string name="favourite">favourite</string>
+    <string name="the_right_address_for_cookind_anyday">The Right Address For Cookind Anyday</string>
+    <string name="register">Register</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="password">Password</string>
+    <string name="let_s_register">Let\'s Register</string>
+    <string name="email">Email</string>
+    <string name="search">Search</string>
+    <string name="seach_receips">Seach Receips..</string>
 </resources>

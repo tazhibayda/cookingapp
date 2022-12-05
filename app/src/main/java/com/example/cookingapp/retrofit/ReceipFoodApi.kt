@@ -1,6 +1,7 @@
 package com.example.cookingapp.retrofit
 
 import com.example.cookingapp.pojo.CategoryList
+import com.example.cookingapp.pojo.MealByCategory
 import com.example.cookingapp.pojo.MealsByCategoryList
 import com.example.cookingapp.pojo.ReceipFoodList
 import retrofit2.Call
@@ -24,4 +25,6 @@ interface ReceipFoodApi {
     @GET("filter.php")
     fun getMealsByCategory(@Query("c")categoryName:String) : Call<MealsByCategoryList>
 
+    @GET("search.php")
+    fun searchMeals(@Query("s") searchQuery :String) :Call<ReceipFoodList>
 }

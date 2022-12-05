@@ -33,5 +33,6 @@ class CategoryMealsViewModel :ViewModel() {
     }
     fun observeMealsLiveData():LiveData<List<MealByCategory>>{
         return mealsLiveData
+
     }
 }

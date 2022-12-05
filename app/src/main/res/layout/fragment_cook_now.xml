@@ -11,23 +11,26 @@
         android:id="@+id/cooking_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
         android:gravity="center"
         android:text="@string/cooking_time"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/secondConstrt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cooking_title">
+        app:layout_constraintTop_toBottomOf="@+id/cooking_title"
+        app:layout_constraintVertical_bias="1.0">
+
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cooking_card"
@@ -46,6 +49,20 @@
                 android:padding="27dp">
 
                 <TextView
+                    android:id="@+id/dish_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/cooking_time"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/cooking_connect_text"
+                    app:layout_constraintStart_toStartOf="@id/cooking_step_text"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
                     android:id="@+id/cooking_step_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -53,8 +70,9 @@
                     android:text="Step 1/10"
                     android:textAppearance="@style/Widget.MaterialComponents.MaterialCalendar.Day"
                     android:textSize="15sp"
+                    app:layout_constraintEnd_toStartOf="@id/cooking_connect_text"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/dish_name" />
 
                 <TextView
                     android:id="@+id/cooking_connect_text"
@@ -66,7 +84,7 @@
                     android:textSize="15sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/cooking_step_text"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/dish_name" />
 
                 <TextView
                     android:id="@+id/cooking_start_text"
@@ -88,28 +106,96 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/work_sans"
-                    android:text="Chop pumpkin and sweet potato into small chunks, put them to the bowl."
+                    android:text="Chop pumpkin and sweet potato into small chunks, put them to the bowl.
+                    Then add water and paprika. Select program no. 3 and cook for 20 mins."
                     android:textColor="#1C0F13"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cooking_start_text" />
 
-                <TextView
-                    android:id="@+id/cooking_text2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:fontFamily="@font/work_sans"
-                    android:text="Then add water and paprika. Select program no. 3 and cook for 20 mins."
-                    android:textColor="#1C0F13"
-                    android:textSize="16sp"
+                <!--                <TextView-->
+                <!--                    android:id="@+id/cooking_text2"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="20dp"-->
+                <!--                    android:fontFamily="@font/work_sans"-->
+                <!--                    android:text="Then add water and paprika. Select program no. 3 and cook for 20 mins."-->
+                <!--                    android:textColor="#1C0F13"-->
+                <!--                    android:textSize="16sp"-->
 
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cooking_text1" />
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/cooking_text1" />-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cycle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cooking_card">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:indeterminateOnly="false"
+                android:progressDrawable="@drawable/cycle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:progress="10" />
+
+            <TextView
+                android:id="@+id/text_view_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="50sp"
+                app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+                app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.562"
+                tools:text="1" />
+
+            <Button
+                android:id="@+id/button_decr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="previous"
+                app:layout_constraintStart_toStartOf="@id/progress_bar"
+                app:layout_constraintTop_toBottomOf="@id/progress_bar" />
+
+            <Button
+                android:id="@+id/button_incr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="112dp"
+                android:text="next"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/progress_bar"
+                app:layout_constraintStart_toStartOf="@+id/button_decr"
+                app:layout_constraintTop_toBottomOf="@id/progress_bar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnFeedBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/cycle"
+            app:layout_constraintTop_toBottomOf="@+id/cooking_card"
+            android:text="FB"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,13 +20,14 @@ class InspirationViewModel(
     private var popularItemsLiveData = MutableLiveData<List<MealsByCategoryList>>()
     private var categoriesLiveData = MutableLiveData<List<Category>>()
     private var favouritesRecipesLiveData = recipeDatabase.recipDao().getAllMeals()
+    private val searchedReceipsLiveData =MutableLiveData<List<Meal>>()
 
     private var savedStateRandomMeal :Meal? = null
-    fun getRandomMeal() {
-        savedStateRandomMeal?.let { randomRecipe->
-            randomMealLiveData.postValue(randomRecipe)
-            return
-        }
+
+    init {
+        getRandomMeal()
+    }
+    private fun getRandomMeal() {
         RetrofitInstance.api.getRandomReceip().enqueue(object : Callback<ReceipFoodList> {
             override fun onResponse(
                 call: Call<ReceipFoodList>,
@@ -47,12 +48,6 @@ class InspirationViewModel(
         })
 
     }
-
-    fun onViewCreated() {
-        getRandomMeal()
-    }
-
-
 
     fun getCategories(){
         RetrofitInstance.api.getCategories().enqueue(object :Callback<CategoryList>{
@@ -78,9 +73,26 @@ class InspirationViewModel(
             recipeDatabase.recipDao().update(meal)
         }
     }
+    fun searchMeals( searchQuery :String) = RetrofitInstance.api.searchMeals(searchQuery).enqueue(
+        object :Callback<ReceipFoodList>{
+            override fun onResponse(
+                call: Call<ReceipFoodList>,
+                response: Response<ReceipFoodList>,
+            ) {
+                val mealslList = response.body()?.meals
+                mealslList?.let {
+                    searchedReceipsLiveData.postValue(it)
+                }
+            }
+
+            override fun onFailure(call: Call<ReceipFoodList>, t: Throwable) {
+                Log.e("InspirationViewModel",t.message.toString())
+            }
+        }
+    )
 
 
-
+    fun observeSearchMealsLiveData():LiveData<List<Meal>> = searchedReceipsLiveData
 
     fun observeRandomMealLiveData(): LiveData<Meal> {
         return randomMealLiveData
