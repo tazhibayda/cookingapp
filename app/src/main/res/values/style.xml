@@ -28,6 +28,22 @@
         <item name="android:fontFamily">@font/roboto_light</item>
         <item name="android:textColor">#322D2D</item>
         <item name="android:textSize">15dp</item>
-
     </style>
+
+
+    <style name="Theme.App" parent="Theme.MaterialComponents">
+        <item name="colorPrimary">@color/shrine_pink_100</item>
+        <item name="colorSurface">@color/shrine_pink_light</item>
+        <item name="colorOnSurface">@color/shrine_pink_900</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.MediumComponent</item>
+    </style>
+
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <color name="shrine_pink_100">#E4C9C7</color>
+    <color name="shrine_pink_light">#E9B3AF</color>
+    <color name="shrine_pink_900">#FDC6C2</color>
 </resources>

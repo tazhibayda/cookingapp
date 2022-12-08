@@ -52,7 +52,7 @@
             app:layout_constraintStart_toStartOf="@id/linear_header"
             app:layout_constraintTop_toBottomOf="@id/linear_header" />
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/random_card_receips"
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -74,7 +74,7 @@
                 android:background="@color/purple"
                 android:scaleType="centerCrop" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
 
 
@@ -91,7 +91,8 @@
             app:layout_constraintStart_toStartOf="@id/would_you_like_text"
             app:layout_constraintTop_toBottomOf="@id/random_card_receips" />
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Theme.App"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -106,7 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollbars="none" />
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
