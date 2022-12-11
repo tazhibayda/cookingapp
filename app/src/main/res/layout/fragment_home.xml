@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F3F1"
-    android:padding="25dp">
+
+    android:padding="20dp">
 
 
     <TextView
@@ -14,22 +14,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/work_sans"
-        android:text="Cooksy"
-        android:textColor="#1C0F13"
+        android:text="@string/cooksy"
+        android:textColor="?attr/colorOnSurface"
         android:textFontWeight="600"
-        android:textSize="24sp"
+        android:textAppearance="?attr/textAppearanceHeadline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="p" />
 
     <ImageView
         android:id="@+id/home_page_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
         android:src="@drawable/first"
+        android:background="?attr/colorOnSurface"
         app:layout_constraintBottom_toTopOf="@+id/home_page_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.556"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.32999998"
@@ -43,9 +46,9 @@
         android:fontFamily="@font/work_sans"
         android:text="@string/all_the_recipes_n_on_your_fingertips"
         android:textAlignment="center"
-        android:textColor="#1C0F13"
+        android:textColor="?attr/colorOnSurface"
         android:textFontWeight="600"
-        android:textSize="30sp"
+        android:textAppearance="?attr/textAppearanceHeadline4"
         app:layout_constraintBottom_toTopOf="@+id/home_page_subtitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -59,7 +62,7 @@
         android:layout_marginTop="12sp"
         android:text="@string/cooking_on_thermomix_made_easy"
         android:textFontWeight="400"
-        android:textSize="17sp"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -71,12 +74,12 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="?attr/colorOnSurface"
         android:fontFamily="@font/work_sans"
         android:shadowColor="@android:color/black"
         android:text="@string/let_s_start"
         android:textAllCaps="false"
-        android:textColor="@color/white"
+        android:textColor="?attr/colorSurface"
         android:textFontWeight="600"
         android:textSize="20sp"
         app:cornerRadius="15dp"

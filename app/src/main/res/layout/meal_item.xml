@@ -6,11 +6,12 @@
     app:cardCornerRadius="8dp"
     app:cardUseCompatPadding="true"
     android:elevation="7dp"
-    style="@style/Theme.App">
+    >
     
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        style="@style/Theme.App">
         <ImageView
             android:id="@+id/meal_img"
             android:layout_width="match_parent"
@@ -25,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorOnSurface"
             app:layout_constraintStart_toStartOf="@id/meal_img"
             app:layout_constraintEnd_toEndOf="@id/meal_img"
             app:layout_constraintBottom_toBottomOf="parent"

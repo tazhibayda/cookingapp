@@ -70,9 +70,9 @@
                     android:id="@+id/categoty_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Category:Italian"
+                    android:text="@string/category_italian"
                     android:textStyle="bold"
-                    android:textColor="#164C65"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="18sp"
                     app:drawableLeftCompat="@drawable/ic_ategory"
                     app:drawableTint="#164C65"
@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:text="Area:Palestine"
                     android:textStyle="bold"
-                    android:textColor="#164C65"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="18sp"
                     app:drawableLeftCompat="@drawable/ic_location"
                     app:drawableTint="#164C65"
@@ -101,7 +101,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="10dp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorOnSurface"
                 android:fontFamily="@font/work_sans"
                 android:textSize="16sp"/>
             <TextView
@@ -110,7 +110,7 @@
                 app:layout_constraintStart_toStartOf="@id/instructions_text"
                 app:layout_constraintTop_toBottomOf="@id/instructions_text"
                 android:layout_marginTop="8dp"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorOnSurface"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

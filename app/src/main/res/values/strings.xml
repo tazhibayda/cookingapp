@@ -60,4 +60,6 @@ Then add water and paprika. Select program no. 3 and cook for 20 mins.</string>
     <string name="email">Email</string>
     <string name="search">Search</string>
     <string name="seach_receips">Seach Receips..</string>
+    <string name="category_italian">Category:Italian</string>
+    <string name="Favourite">Favourite</string>
 </resources>

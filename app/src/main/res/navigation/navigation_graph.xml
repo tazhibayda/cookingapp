@@ -26,10 +26,6 @@
             app:destination="@id/searchFragment" />
     </fragment>
     <fragment
-        android:id="@+id/recipesFragment"
-        android:name="com.example.cookingapp.fragments.RecipesFragment"
-        android:label="RecipesFragment" />
-    <fragment
         android:id="@+id/animationFragment"
         android:name="com.example.cookingapp.fragments.AnimationFragment"
         android:label="AnimationFragment" >
@@ -51,6 +47,18 @@
         android:id="@+id/cookNowFragment"
         android:name="com.example.cookingapp.fragments.CookNowFragment"
         android:label="CookNowFragment"
-        tools:layout="@layout/fragment_cook_now"/>
+        tools:layout="@layout/fragment_cook_now">
+        <action
+            android:id="@+id/action_cookNowFragment_to_cookNowQualityFragment"
+            app:destination="@id/cookNowQualityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cookNowQualityFragment"
+        android:name="com.example.cookingapp.fragments.CookNowQualityFragment"
+        android:label="CookNowQualityFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.cookingapp.SettingsFragment"
+        android:label="SettingsFragment" />
 
 </navigation>

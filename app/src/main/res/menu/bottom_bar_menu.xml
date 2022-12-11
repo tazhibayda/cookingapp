@@ -6,15 +6,10 @@
         android:icon="@drawable/bottombar_inspriations"
         android:title="@string/home"/>
     <item
-        android:id="@+id/recipesFragment"
-        android:enabled="true"
-        android:icon="@drawable/bottombar_myrecipes"
-        android:title="@string/myrecipes"/>
-    <item
         android:id="@+id/favouriteFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_favorite_24"
-        android:title="@string/favourite"/>
+        android:title="@string/Favourite"/>
     <item
         android:id="@+id/cookNowFragment"
         android:enabled="true"

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F5F3F1"
+    android:background="?attr/colorSurface"
     android:padding="25dp">
 
     <TextView
@@ -171,7 +171,7 @@
                 app:layout_constraintStart_toStartOf="@id/progress_bar"
                 app:layout_constraintTop_toBottomOf="@id/progress_bar" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_incr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

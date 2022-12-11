@@ -27,8 +27,9 @@
                 android:layout_weight="3"
                 android:fontFamily="@font/work_sans"
                 android:text="@string/cooksy"
-                android:textColor="@color/purple"
-                android:textSize="25sp"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="34sp"
+                android:letterSpacing="0.1"
                 android:textStyle="bold" />
 
             <ImageView
@@ -36,7 +37,8 @@
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_search" />
+                android:src="@drawable/ic_search"
+                android:contentDescription="TODO" />
         </LinearLayout>
 
         <TextView
@@ -46,8 +48,8 @@
             android:layout_marginTop="35dp"
             android:fontFamily="@font/work_sans"
             android:text="@string/would_you_like_to_cook"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/linear_header"
             app:layout_constraintTop_toBottomOf="@id/linear_header" />
@@ -85,8 +87,8 @@
             android:layout_marginTop="25dp"
             android:fontFamily="@font/work_sans"
             android:text="@string/categories"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/would_you_like_text"
             app:layout_constraintTop_toBottomOf="@id/random_card_receips" />

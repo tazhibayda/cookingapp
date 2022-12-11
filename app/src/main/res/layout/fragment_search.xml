@@ -21,14 +21,13 @@
         >
 
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ed_search_box"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight = "1"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:background="@drawable/seacrh_box_background"
             android:hint = "@string/seach_receips"
             />
         <ImageView

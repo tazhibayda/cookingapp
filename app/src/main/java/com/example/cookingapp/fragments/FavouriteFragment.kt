@@ -72,8 +72,8 @@ class FavouriteFragment : Fragment() {
     }
 
     private fun observeFavourites() {
-        viewModel.observeFavouritesRecipesLiveDara().observe(viewLifecycleOwner, { recipes ->
+        viewModel.observeFavouritesRecipesLiveDara().observe(viewLifecycleOwner) { recipes ->
             favouritesAdapter.differ.submitList(recipes)
-        })
+        }
     }
 }
