@@ -8,11 +8,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.cookingapp.CategoryMealsActivity
 import com.example.cookingapp.HomePageActivity
+import com.example.cookingapp.R
 import com.example.cookingapp.ReceipActivity
 import com.example.cookingapp.adapters.CategoriesAdapter
 import com.example.cookingapp.adapters.PopularAdapter
@@ -27,13 +29,14 @@ class InspirationFragment : Fragment() {
     private lateinit var viewModel: InspirationViewModel
     private lateinit var randomMeal: Meal
     private lateinit var popularAdapter: PopularAdapter
-    private lateinit var categoriesAdapter :CategoriesAdapter
+    private lateinit var categoriesAdapter: CategoriesAdapter
+
 
     companion object {
         const val RECEIP_ID = "com.example.cookingapp.fragments.idReceip"
         const val RECEIP_NAME = "com.example.cookingapp.fragments.nameReceip"
         const val RECEIP_THUMB = "com.example.cookingapp.fragments.thumbMeal"
-        const val CATEGORY_NAME  = "com.example.cookingapp.fragments.categoryName"
+        const val CATEGORY_NAME = "com.example.cookingapp.fragments.categoryName"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,11 +57,11 @@ class InspirationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+/*
         preparePopularItemsRecyclerView()
+*/
         initObservers()
         initListeners()
-
-        viewModel.onViewCreated()
 
         prepareCategoriesRecyclerView()
         viewModel.getCategories()
@@ -66,12 +69,20 @@ class InspirationFragment : Fragment() {
 
 
         onCategoryClick()
+        onSearchItemClick()
     }
 
+    private fun onSearchItemClick() {
+        binding.imageSearchIns.setOnClickListener {
+            findNavController().navigate(R.id.action_inspirationFragment_to_searchFragment2)
+        }
+    }
+
+
     private fun onCategoryClick() {
-        categoriesAdapter.OnItemclick = {category ->
-            val intent = Intent(activity,CategoryMealsActivity::class.java)
-            intent.putExtra(CATEGORY_NAME,category.strCategory)
+        categoriesAdapter.OnItemclick = { category ->
+            val intent = Intent(activity, CategoryMealsActivity::class.java)
+            intent.putExtra(CATEGORY_NAME, category.strCategory)
             startActivity(intent)
         }
     }
@@ -79,25 +90,25 @@ class InspirationFragment : Fragment() {
     private fun prepareCategoriesRecyclerView() {
         categoriesAdapter = CategoriesAdapter()
         binding.recyclerViewCategories.apply {
-            layoutManager = GridLayoutManager(context,3,GridLayoutManager.VERTICAL, false)
+            layoutManager = GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false)
             adapter = categoriesAdapter
 
         }
     }
 
     private fun observeCategoriesLiveData() {
-        viewModel.observeCategoriesLiveData().observe(viewLifecycleOwner, Observer{categories->
-               categoriesAdapter.setCategoryList(categories)
+        viewModel.observeCategoriesLiveData().observe(viewLifecycleOwner, Observer { categories ->
+            categoriesAdapter.setCategoryList(categories)
         })
     }
 
-    private fun preparePopularItemsRecyclerView() {
-        popularAdapter = PopularAdapter()
-        binding.recyclerViewReceipsPopular.apply {
-            layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-            adapter = popularAdapter
-        }
-    }
+    /* private fun preparePopularItemsRecyclerView() {
+         popularAdapter = PopularAdapter()
+         binding.recyclerViewReceipsPopular.apply {
+             layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+             adapter = popularAdapter
+         }
+     }*/
 
     private fun initListeners() {
         binding.randomCardReceips.setOnClickListener {
@@ -120,13 +131,9 @@ class InspirationFragment : Fragment() {
         }
 
 
-
-
-
-
     }
 
-        }
+}
 
 
 

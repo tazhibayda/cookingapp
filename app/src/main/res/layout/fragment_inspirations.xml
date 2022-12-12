@@ -27,8 +27,9 @@
                 android:layout_weight="3"
                 android:fontFamily="@font/work_sans"
                 android:text="@string/cooksy"
-                android:textColor="@color/purple"
-                android:textSize="25sp"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="34sp"
+                android:letterSpacing="0.1"
                 android:textStyle="bold" />
 
             <ImageView
@@ -36,7 +37,8 @@
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_search" />
+                android:src="@drawable/ic_search"
+                android:contentDescription="TODO" />
         </LinearLayout>
 
         <TextView
@@ -46,13 +48,13 @@
             android:layout_marginTop="35dp"
             android:fontFamily="@font/work_sans"
             android:text="@string/would_you_like_to_cook"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/linear_header"
             app:layout_constraintTop_toBottomOf="@id/linear_header" />
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/random_card_receips"
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -74,29 +76,9 @@
                 android:background="@color/purple"
                 android:scaleType="centerCrop" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:id="@+id/popular_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:fontFamily="@font/work_sans"
-            android:text="@string/over_popular_receips"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/would_you_like_text"
-            app:layout_constraintTop_toBottomOf="@id/random_card_receips" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_receips_popular"
-            android:layout_width="wrap_content"
-            android:layout_height="135dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintStart_toStartOf="@id/would_you_like_text"
-            app:layout_constraintTop_toBottomOf="@id/popular_text" />
 
         <TextView
             android:id="@+id/categories_text"
@@ -105,13 +87,14 @@
             android:layout_marginTop="25dp"
             android:fontFamily="@font/work_sans"
             android:text="@string/categories"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/would_you_like_text"
-            app:layout_constraintTop_toBottomOf="@id/recycler_view_receips_popular" />
+            app:layout_constraintTop_toBottomOf="@id/random_card_receips" />
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Theme.App"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -126,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollbars="none" />
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

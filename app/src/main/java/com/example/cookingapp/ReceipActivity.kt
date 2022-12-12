@@ -36,13 +36,13 @@ class ReceipActivity : AppCompatActivity() {
         receipMvvm =ViewModelProvider(this)[RecipeViewModel::class.java]
 */
 
-        getReceipInformationFromIntent()
+        getRecipeInformationFromIntent()
         setInformationInViews()
         loadingCase()
         onResponseCase()
-        onyoutube()
+        onYoutube()
         receipMvvm.getReceipDetail(receipId)
-        observeReceipLiveData()
+        observeRecipeLiveData()
         onFavouriteClick()
     }
 
@@ -55,14 +55,14 @@ class ReceipActivity : AppCompatActivity() {
         }
     }
 
-    private fun onyoutube() {
+    private fun onYoutube() {
         binding.imageYoutube.setOnClickListener{
             val intent  = Intent(Intent.ACTION_VIEW, Uri.parse(youtubeLink))
             startActivity(intent)
         }
     }
     private var recipeToSave:Meal? =null
-    private fun observeReceipLiveData() {
+    private fun observeRecipeLiveData() {
         receipMvvm.observerReceipDetailsLiveData().observe(this,object : Observer<Meal>{
             @SuppressLint("SetTextI18n")
             override fun onChanged(t: Meal?) {
@@ -89,7 +89,7 @@ class ReceipActivity : AppCompatActivity() {
 
     }
 
-    private fun getReceipInformationFromIntent() {
+    private fun getRecipeInformationFromIntent() {
         val intent =intent
         receipId  = intent.getStringExtra(InspirationFragment.RECEIP_ID)!!
         receipName = intent.getStringExtra(InspirationFragment.RECEIP_NAME)!!

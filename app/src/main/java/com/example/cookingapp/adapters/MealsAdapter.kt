@@ -11,18 +11,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cookingapp.R
 import com.example.cookingapp.models.RecipeModel
 
-class RecipeAdapter(private val context: Context, courseModelArrayList: ArrayList<RecipeModel>) :
-    RecyclerView.Adapter<RecipeAdapter.Viewholder>() {
+class MealsAdapter(private val context: Context, courseModelArrayList: ArrayList<RecipeModel>) :
+    RecyclerView.Adapter<MealsAdapter.Viewholder>() {
 
     private val courseModelArrayList: ArrayList<RecipeModel>
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeAdapter.Viewholder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealsAdapter.Viewholder {
         // to inflate the layout for each item of recycler view.
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.layout_for_recipes, parent, false)
         return Viewholder(view)
     }
 
     @SuppressLint("SetTextI18n")
-    override fun onBindViewHolder(holder: RecipeAdapter.Viewholder, position: Int) {
+    override fun onBindViewHolder(holder: MealsAdapter.Viewholder, position: Int) {
         // to set data to textview and imageview of each card layout
         val model: RecipeModel = courseModelArrayList[position]
         holder.recipe_name.text = model.name

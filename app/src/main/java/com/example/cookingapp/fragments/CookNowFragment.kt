@@ -1,13 +1,14 @@
 package com.example.cookingapp.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.cookingapp.CookNowViewModel
 import com.example.cookingapp.databinding.FragmentCookNowBinding
-import com.example.cookingapp.models.CookNowViewModel
 import com.example.cookingapp.models.CookStep
 
 
@@ -22,6 +23,7 @@ class CookNowFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentCookNowBinding.inflate(inflater, container, false)
+        binding.dishName.text = viewModel.dish.name
         return binding.root
     }
 
@@ -32,6 +34,9 @@ class CookNowFragment : Fragment() {
         binding.buttonIncr.setOnClickListener {
             viewModel.onClickIncrease()
         }
+        /* binding.btnFeedBack.setOnClickListener{
+             findNavController().navigate(R.id.action_cookNowFragment_to_cookNowQualityFragment2)
+         }*/
         viewModel.currentStep.observe(viewLifecycleOwner) { currentStep ->
             updateCurrentStep(currentStep)
         }
@@ -44,6 +49,7 @@ class CookNowFragment : Fragment() {
         _binding = null
     }
 
+    @SuppressLint("SetTextI18n")
     private fun updateCurrentStep(currentStep: CookStep) {
         val (currentStepNumber, _, stepsCount) = currentStep
         binding.cookingStepText.text = "Step: ${currentStep.stepNumber}/$stepsCount"
@@ -53,11 +59,6 @@ class CookNowFragment : Fragment() {
         binding.textViewProgress.text = currentStepNumber.toString()
 
 
-//        if(counter<=9){
-//            binding.cookingStepText.text = listOfCookSteps.get(counter).steps
-//            binding.cookingText1.text = listOfCookSteps.get(counter).stepDiscription
-//            counter++
-//        }
     }
 
 

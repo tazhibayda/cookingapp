@@ -6,11 +6,10 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.cookingapp.databinding.FragmentFavouriteBinding
 import com.example.cookingapp.databinding.MealItemBinding
 import com.example.cookingapp.pojo.Meal
 
-class FavouritesRecipesAdapter :RecyclerView.Adapter<FavouritesRecipesAdapter.FavouritesRecipeAdapterViewHolder>(){
+class RecipesAdapter :RecyclerView.Adapter<RecipesAdapter.FavouritesRecipeAdapterViewHolder>(){
 
     inner class FavouritesRecipeAdapterViewHolder(val binding: MealItemBinding) :RecyclerView.ViewHolder(binding.root)
 
@@ -24,8 +23,6 @@ class FavouritesRecipesAdapter :RecyclerView.Adapter<FavouritesRecipesAdapter.Fa
         }
     }
     val differ = AsyncListDiffer(this,diffUtil)
-
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,

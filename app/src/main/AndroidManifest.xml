@@ -9,12 +9,13 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/day3_image"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="Cooksy"
+        android:roundIcon="@drawable/cooking1"
         android:supportsRtl="true"
         android:theme="@style/Theme.CookingApp"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
         <activity
             android:name=".CategoryMealsActivity"
             android:exported="false">

@@ -1,5 +1,6 @@
 package com.example.cookingapp.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,7 @@ class CategoriesAdapter():RecyclerView.Adapter<CategoriesAdapter.CategoryViewHol
     var OnItemclick :((Category) -> Unit)? = null
 
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setCategoryList(categoriesList :List<Category>){
         this.categoriesList = categoriesList as ArrayList<Category>
         notifyDataSetChanged()
@@ -30,13 +32,12 @@ class CategoriesAdapter():RecyclerView.Adapter<CategoriesAdapter.CategoryViewHol
         holder.binding.tvCategoryName.text = categoriesList[position].strCategory
 
         holder.itemView.setOnClickListener {
-            OnItemclick!!   .invoke(categoriesList[position])
+            OnItemclick!!.invoke(categoriesList[position])
         }
     }
 
     override fun getItemCount(): Int {
     return categoriesList.size
     }
-
 
 }
