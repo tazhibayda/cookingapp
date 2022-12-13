@@ -59,6 +59,7 @@ class FavouriteFragment : Fragment() {
                 ).show()
             }
 
+
         }
         ItemTouchHelper(itemTouchHelper).attachToRecyclerView(binding.rvFavourites)
     }

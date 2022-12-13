@@ -24,5 +24,4 @@ interface RecipeDao {
 
     @Query("SELECT * FROM recipeinformation")
     fun getAllMeals():LiveData<List<Meal>>
-
 }
