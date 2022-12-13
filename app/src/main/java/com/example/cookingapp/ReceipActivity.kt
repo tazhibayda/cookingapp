@@ -17,7 +17,7 @@ import com.example.cookingapp.pojo.Meal
 import com.example.cookingapp.viewModel.RecipeViewModel
 import com.example.cookingapp.viewModel.RecipeViewModelFactory
 
-class ReceipActivity(function: () -> Unit) : AppCompatActivity() {
+class ReceipActivity() : AppCompatActivity() {
     private lateinit var receipId :String
     private lateinit var receipName :String
     private lateinit var receipThumb :String

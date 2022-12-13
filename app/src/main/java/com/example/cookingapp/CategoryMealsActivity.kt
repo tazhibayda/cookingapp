@@ -1,5 +1,6 @@
 package com.example.cookingapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -31,7 +32,13 @@ class CategoryMealsActivity : AppCompatActivity() {
     }
 
     private fun prepareRecyclerView() {
-        categoryMealsAdapter = CategoryMealsAdapter()
+        categoryMealsAdapter = CategoryMealsAdapter(){
+            val intent = Intent(this, ReceipActivity::class.java)
+            intent.putExtra(InspirationFragment.RECEIP_ID, it.idMeal)
+            intent.putExtra(InspirationFragment.RECEIP_NAME, it.strMeal)
+            intent.putExtra(InspirationFragment.RECEIP_THUMB, it.strMealThumb)
+            startActivity(intent)
+        }
         binding.rvMeals.apply {
             layoutManager = GridLayoutManager(context,2,GridLayoutManager.VERTICAL, false)
             adapter = categoryMealsAdapter

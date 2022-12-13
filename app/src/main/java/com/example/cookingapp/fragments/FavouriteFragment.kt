@@ -1,5 +1,6 @@
 package com.example.cookingapp.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,6 +14,8 @@ import com.example.cookingapp.HomePageActivity
 import com.example.cookingapp.ReceipActivity
 import com.example.cookingapp.adapters.RecipesAdapter
 import com.example.cookingapp.databinding.FragmentFavouriteBinding
+import com.example.cookingapp.db.RecipeDao
+import com.example.cookingapp.pojo.Meal
 import com.example.cookingapp.viewModel.InspirationViewModel
 import com.google.android.material.snackbar.Snackbar
 
@@ -69,8 +72,11 @@ class FavouriteFragment : Fragment() {
 
     private fun prepareRecyclerView() {
         favouritesAdapter = RecipesAdapter(){
-            Log.e("WWWW",it.idMeal)
-
+            val intent = Intent(activity, ReceipActivity::class.java)
+            intent.putExtra(InspirationFragment.RECEIP_ID, it.idMeal)
+            intent.putExtra(InspirationFragment.RECEIP_NAME, it.strMeal)
+            intent.putExtra(InspirationFragment.RECEIP_THUMB, it.strMealThumb)
+            startActivity(intent)
         }
         binding.rvFavourites.apply {
             layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)

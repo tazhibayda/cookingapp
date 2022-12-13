@@ -1,5 +1,6 @@
 package com.example.cookingapp.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cookingapp.HomePageActivity
 import com.example.cookingapp.R
+import com.example.cookingapp.ReceipActivity
 import com.example.cookingapp.adapters.RecipesAdapter
 import com.example.cookingapp.databinding.FragmentSearchBinding
 import com.example.cookingapp.viewModel.InspirationViewModel
@@ -73,7 +75,11 @@ class SearchFragment : Fragment() {
 
     private fun prepareRecyclerView() {
         searchRecyclerViewAdapter = RecipesAdapter(){
-            Log.e("ASDAS",it.idMeal)
+            val intent = Intent(activity, ReceipActivity::class.java)
+            intent.putExtra(InspirationFragment.RECEIP_ID, it.idMeal)
+            intent.putExtra(InspirationFragment.RECEIP_NAME, it.strMeal)
+            intent.putExtra(InspirationFragment.RECEIP_THUMB, it.strMealThumb)
+            startActivity(intent)
         }
         binding.rvSearchRecieps.apply {
             layoutManager =GridLayoutManager(context,2,GridLayoutManager.VERTICAL, false)

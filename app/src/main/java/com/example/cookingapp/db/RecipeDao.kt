@@ -25,6 +25,7 @@ interface RecipeDao {
     @Query("SELECT * FROM recipeinformation")
     fun getAllMeals():LiveData<List<Meal>>
 
-    @Query("Select * FROM recipeinformation where idMeal=idMeal")
+    @Query("Select * FROM recipeinformation where idMeal=:id")
     fun getById(id:Int):Meal
+
 }
