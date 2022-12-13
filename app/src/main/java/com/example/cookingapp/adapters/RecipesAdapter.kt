@@ -35,6 +35,9 @@ class RecipesAdapter(private val onItemClicked: (Meal) -> Unit) :RecyclerView.Ad
         val recipe = differ.currentList[position]
         Glide.with(holder.itemView).load(recipe.strMealThumb).into(holder.binding.mealImg)
         holder.binding.mealName.text = recipe.strMeal
+        holder.itemView.setOnClickListener{
+            onItemClicked(recipe)
+        }
     }
 
     override fun getItemCount(): Int {

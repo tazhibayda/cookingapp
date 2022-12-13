@@ -70,6 +70,7 @@ class FavouriteFragment : Fragment() {
     private fun prepareRecyclerView() {
         favouritesAdapter = RecipesAdapter(){
             Log.e("WWWW",it.idMeal)
+
         }
         binding.rvFavourites.apply {
             layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
