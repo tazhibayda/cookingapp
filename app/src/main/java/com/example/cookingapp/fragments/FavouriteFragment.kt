@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cookingapp.HomePageActivity
+import com.example.cookingapp.ReceipActivity
 import com.example.cookingapp.adapters.RecipesAdapter
 import com.example.cookingapp.databinding.FragmentFavouriteBinding
 import com.example.cookingapp.viewModel.InspirationViewModel
@@ -37,6 +38,7 @@ class FavouriteFragment : Fragment() {
 
         observeFavourites()
         prepareRecyclerView()
+
         val itemTouchHelper = object : ItemTouchHelper.SimpleCallback(
             ItemTouchHelper.UP or ItemTouchHelper.DOWN,
             ItemTouchHelper.RIGHT or ItemTouchHelper.LEFT
@@ -77,4 +79,5 @@ class FavouriteFragment : Fragment() {
             favouritesAdapter.differ.submitList(recipes)
         }
     }
+
 }
