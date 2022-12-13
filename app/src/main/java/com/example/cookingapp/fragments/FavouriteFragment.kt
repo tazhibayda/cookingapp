@@ -1,6 +1,7 @@
 package com.example.cookingapp.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -67,7 +68,9 @@ class FavouriteFragment : Fragment() {
     }
 
     private fun prepareRecyclerView() {
-        favouritesAdapter = RecipesAdapter()
+        favouritesAdapter = RecipesAdapter(){
+            Log.e("WWWW",it.idMeal)
+        }
         binding.rvFavourites.apply {
             layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
             adapter = favouritesAdapter
